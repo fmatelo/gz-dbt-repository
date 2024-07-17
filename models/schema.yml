@@ -46,3 +46,6 @@ sources:
             description: the cost of preparing the parcel in warehouse
           - name: ship_cost
             description: shipping cost paid by greenweez to the carrier/transporter
+    freshness: 
+      warn_after: {count: 90, period: day}
+    loaded_at_field: " CAST(date_date as TIMESTAMP)" 
