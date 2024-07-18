@@ -24,7 +24,7 @@ sources:
         identifier: raw_gz_product
         description: products of greenweez
         columns:
-          - name: prodducts_id
+          - name: products_id
             description: primary key of product table
             tests:
               - unique
