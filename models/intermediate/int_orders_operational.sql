@@ -8,7 +8,7 @@ SELECT
   ,o.margin
   ,s.shipping_fee
   ,s.logcost
-  ,CAST(s.ship_cost) as s.ship_cost
+  ,s.ship_cost
 FROM {{ref("int_orders_margin")}} o
 LEFT JOIN {{ref("stg_raw__ship")}} s 
   USING(orders_id)
