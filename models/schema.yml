@@ -49,3 +49,37 @@ sources:
     freshness: 
       warn_after: {count: 90, period: day}
     loaded_at_field: " CAST(date_date as TIMESTAMP)" 
+
+models:
+  - name: stg_raw__product
+    description: raw data products of greenweez
+    columns:
+      - name: products_id
+        description: primary key of product table
+      - name: purchase_price
+        description: purchase price of a product 
+  - name: stg_raw__sales
+    description:  raw data sales of greenweez
+    columns:
+      - name: date_date
+        description: purchase date
+      - name: orders_id
+        description: foreign key to ship
+      - name: pdt_id
+        description: foregn key to product
+      - name: revenue
+        description: the amount paid by the customer to purchase a product
+      - name: quantity
+        description: quantity of products purchassed for this order
+  - name: stg_raw__ship
+    description: raw data ship of greenweez
+    columns:
+      - name: orders_id
+        description: primary key of ship table
+      - name: shipping_fee
+        description: the price that the customer pays for shipping
+      - name: log_cost
+        description: the cost of preparing the parcel in warehouse
+      - name: ship_cost
+        description: shipping cost paid by greenweez to the carrier/transporter
+      
